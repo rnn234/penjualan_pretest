@@ -1,0 +1,16 @@
+<h2>Form Pembelian Produk</h2>
+
+<% if (error) { %>
+  <p style="color: red;"><%= error %></p>
+<% } %>
+
+<form action="/beli/<%= produk.id %>" method="POST">
+  <p>Produk: <strong><%= produk.nama %></strong></p>
+  <p>Harga: Rp <%= produk.harga %></p>
+  <p>Stok tersedia: <%= produk.stok %></p>
+
+  <label for="jumlah">Jumlah Beli:</label>
+  <input type="number" name="jumlah" min="1" max="<%= produk.stok %>" required>
+  <button type="submit">Beli</button>
+  <a href="/produk">Batal</a>
+</form>

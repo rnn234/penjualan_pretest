@@ -1,0 +1,14 @@
+<h2>Edit Produk</h2>
+
+<form action="/produk/edit/<%= produk.id %>" method="POST">
+  <div>
+    <label for="nama">Nama Produk</label>
+    <input type="text" name="nama" id="nama" value="<%= produk.nama %>" required>
+  </div>
+  <div>
+    <label for="harga">Harga</label>
+    <input type="number" name="harga" id="harga" step="0.01" value="<%= produk.harga %>" required>
+  </div>
+  <button type="submit">Simpan Perubahan</button>
+  <a href="/produk">Batal</a>
+</form>

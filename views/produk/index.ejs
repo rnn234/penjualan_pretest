@@ -1,0 +1,22 @@
+<h2>Daftar Produk</h2>
+<a href="/produk/tambah">Tambah Produk</a>
+<a href="/pembelian">Riwayat Pembelian</a>
+<table border="1">
+  <tr><th>Nama</th><th>Harga</th><th>Stok</th><th>Aksi</th></tr>
+  <% produk.forEach(p => { %>
+    <tr>
+      <td><%= p.nama %></td>
+      <td><%= p.harga %></td>
+      <td><%= p.stok %></td>
+      <td>
+        <a href="/produk/edit/<%= p.id %>">Edit</a> |
+        <a href="/produk/restock/<%= p.id %>">Restock</a> |
+        <a href="/produk/hapus/<%= p.id %>">Hapus</a> |
+        <a href="/produk/detail/<%= p.id %>">Detail</a> |
+        <a href="/beli/<%= p.id %>">Beli</a>
+      </td>
+    </tr>
+  <% }) %>
+</table>
+<p><a href="/logout">Logout</a></p>
+<p><a href="/dashboard">Kembali ke Home</a></p>

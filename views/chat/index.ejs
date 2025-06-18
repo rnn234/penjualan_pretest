@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatbot</title>
+</head>
+<body>
+  <h1>Chat dengan AI</h1>
+
+  <form method="POST" action="/chat">
+    <input type="text" name="question" placeholder="Ketik pertanyaan..." required>
+    <button type="submit">Kirim</button>
+  </form>
+
+  <hr>
+  <% messages.forEach(msg => { %>
+    <p><strong><%= msg.role === 'user' ? 'Anda' : 'AI' %>:</strong> <%= msg.content %></p>
+  <% }); %>
+</body>
+</html>

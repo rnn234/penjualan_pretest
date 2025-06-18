@@ -1,0 +1,18 @@
+<h2>Tambah Produk</h2>
+
+<form action="/produk/tambah" method="POST">
+  <div>
+    <label for="nama">Nama Produk</label>
+    <input type="text" name="nama" id="nama" required>
+  </div>
+  <div>
+    <label for="harga">Harga</label>
+    <input type="number" name="harga" id="harga" step="0.01" required>
+  </div>
+  <div>
+    <label for="stok">Stok Awal</label>
+    <input type="number" name="stok" id="stok" required>
+  </div>
+  <button type="submit">Simpan</button>
+  <a href="/produk">Batal</a>
+</form>

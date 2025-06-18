@@ -1,0 +1,36 @@
+<h2>Riwayat Pembelian</h2>
+
+<a href="/produk">← Kembali ke Produk</a>
+
+<form method="GET" action="/pembelian">
+  <label>Dari:</label>
+  <input type="date" name="dari" value="<%= dari %>">
+  <label>Sampai:</label>
+  <input type="date" name="sampai" value="<%= sampai %>">
+  <button type="submit">Filter</button>
+  <a href="/pembelian">Reset</a>
+</form>
+
+<table border="1" cellpadding="5">
+  <tr>
+    <th>ID</th>
+    <th>Produk</th>
+    <th>Jumlah</th>
+    <th>Total</th>
+    <th>Tanggal</th>
+    <th>Aksi</th>
+  </tr>
+  <% pembelian.forEach(p => { %>
+    <tr>
+      <td><%= p.id %></td>
+      <td><%= p.nama_produk %></td>
+      <td><%= p.jumlah %></td>
+      <td>Rp <%= p.total %></td>
+      <td><%= p.tanggal.toLocaleString() %></td>
+      <td>
+        <a href="/beli/<%= p.produk_id %>">Beli Lagi</a> |
+        <a href="/cancel/<%= p.id %>" onclick="return confirm('Yakin cancel?')">Cancel</a>
+      </td>
+    </tr>
+  <% }) %>
+</table>

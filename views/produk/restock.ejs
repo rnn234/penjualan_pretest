@@ -1,0 +1,18 @@
+<h2>Restock Produk</h2>
+
+<form action="/produk/restock/<%= produk.id %>" method="POST">
+  <div>
+    <label>Nama Produk:</label>
+    <strong><%= produk.nama %></strong>
+  </div>
+  <div>
+    <label>Stok Sekarang:</label>
+    <strong><%= produk.stok %></strong>
+  </div>
+  <div>
+    <label for="jumlah">Jumlah Tambahan:</label>
+    <input type="number" name="jumlah" id="jumlah" min="1" required>
+  </div>
+  <button type="submit">Tambahkan Stok</button>
+  <a href="/produk">Batal</a>
+</form>
